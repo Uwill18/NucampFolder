@@ -41,3 +41,5 @@ export const CAMPSITES = [
             "You'll never want to leave this hidden gem, deep within the lush Redux Woods."
     }
 ];
+
+export default CAMPSITES;

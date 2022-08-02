@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VEVENT
+DTSTAMP:20220719T194643Z
+DTSTART:20220728T194500Z
+DTEND:20220728T203000Z
+SUMMARY:45-Minute Appointment
+UID:N1L89Z02
+CLASS:PRIVATE
+DESCRIPTION:Confirmation #	N1L89Z02\n\nThursday\, Jul 28\, 2022\n02:45 PM - 03:30 PM\nCentral Daylight Time\n\n\n\nResource(s)\n	Brad Fehnel\n\nAppointment Type\n	45-Minute Appointment\n\nAttendee(s)\n	Uri Williams Easter\nTo cancel or reschedule this appointment: https://www.timetrade.com/app/wgu-mentoring/workflows/WGU100/find?appointmentId=N1L89Z02&attendee_person_lastName=Williams Easter\n\n
+CREATED:20220719T194643Z
+LAST-MODIFIED:20220719T194643Z
+SEQUENCE:332884003
+STATUS:CONFIRMED
+ORGANIZER;CN=Unknown Resource:mailto:noreply@timetrade.com
+ATTENDEE;CN=Uri Williams Easter:mailto:uwill18@my.wgu.edu
+END:VEVENT
+END:VCALENDAR
