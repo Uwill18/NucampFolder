@@ -5,7 +5,7 @@ import PartnersList from '../features/partners/PartnersList';
 const AboutPage =()=>{
 return(
 <Container>
-    <SubHeader current={'About Us'}/>
+    <SubHeader current="About Us"/>
     <Row className='row-content'>
     <Col sm='6'><h3>Our Mission</h3>
     <p>
@@ -19,7 +19,7 @@ return(
                         campsites they have visited with each other.
                     </p>
     </Col>
-    <Col>
+    <Col sm="6">
     <Card>
         <CardHeader className='bg-primary text-white'>
         <h3>Facts at a Glance</h3>
@@ -38,7 +38,7 @@ return(
         </CardBody>
     </Card>
     </Col>
-    <Row>
+    <Row className='row-content'>
     <Col>
     <Card className='bg-light mt-3'>
      <CardBody>
@@ -63,8 +63,8 @@ return(
     </Row>
     <Row>
         <Col xs='12'>
-            <PartnersList/>
             <h3>Community Partners</h3>
+            <PartnersList/>
         </Col>
     </Row>
 </Container>
