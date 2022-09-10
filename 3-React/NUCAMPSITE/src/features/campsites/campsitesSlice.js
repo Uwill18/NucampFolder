@@ -1,5 +1,5 @@
 import CAMPSITES from "../../app/shared/CAMPSITES";
-import createSlice from '@reduxjs/toolkit'
+import {createSlice} from '@reduxjs/toolkit';
 
 
 const initialState = {
