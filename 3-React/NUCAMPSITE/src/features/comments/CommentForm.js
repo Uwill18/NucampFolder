@@ -3,6 +3,9 @@ import { Button, Modal, ModalHeader, ModalBody,FormGroup,Label} from "reactstrap
 import { Formik, Field,Form,ErrorMessage } from "formik";
 import { validateCommentForm } from "../../utils/validateCommentForm"; //task3
 //import { Formik, Field,Form,ErrorMessage} from "formik";//task3
+import { useDispatch } from "react-redux";
+import { addComment } from "./commentsSlice";
+
 
 const CommentForm =({campsiteId})=>{
 
@@ -11,15 +14,17 @@ const CommentForm =({campsiteId})=>{
     // const toggleModal = () => {
     //   setModalOpen(!modalOpen);
     // }
-
+   const dispatch = useDispatch();
    const handleSubmit =(values)=>{
     const comment =   {
         campsiteId: parseInt(campsiteId),
         rating: values.rating,
         author: values.author,
-        text: values.commentText
+        text: values.commentText,
+        date: new Date(Date.now()).toISOString()
     };
     console.log(comment);
+    dispatch(addComment(comment));
     setModalOpen(false);
    }
 

@@ -1,6 +1,8 @@
 import {Col} from 'reactstrap';
 import Partner from './Partner.js';
 import { selectAllPartners } from '../partners/partnersSlice';
+import { useSelector } from 'react-redux';
+
 
 const PartnersList =()=>{
     
