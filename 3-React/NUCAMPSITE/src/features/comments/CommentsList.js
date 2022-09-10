@@ -4,7 +4,7 @@ import { selectCommentsByCampsiteId } from './commentsSlice';
 import CommentForm from './CommentForm';
 
 const CommentsList = ({ campsiteId }) => {
-    const comments = selectCommentsByCampsiteId(campsiteId);
+    const comments = useSelector(selectCommentsByCampsiteId(campsiteId));
 
     if (comments && comments.length > 0) {
         return (
