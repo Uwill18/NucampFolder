@@ -7,7 +7,25 @@ import CampsitesDirectoryPage from './pages/CampsitesDirectoryPage';
 import './App.css';
 import CampsiteDetailPage from './pages/CampsiteDetailPage';
 import AboutPage from './pages/AboutPage';
+
+import {useEffect} from 'react';
+import {useDispatch} from 'react-redux';
+import { fetchCampsites } from './features/campsites/campsitesSlice';
+import { fetchPartners } from './features/partners/partnersSlice';
+import { fetchPromotions } from './features/promotions/promotionsSlice';
+import { fetchComments } from './features/comments/commentsSlice';
+
 function App() {
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchCampsites());
+        dispatch(fetchPartners());
+        dispatch(fetchPromotions());
+        dispatch(fetchComments());
+    }, [dispatch]);
+
+
     return (
         <div className='App'>
             <Header />
