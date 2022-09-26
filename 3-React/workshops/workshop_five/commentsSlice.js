@@ -28,7 +28,7 @@ export const postComment = createAsyncThunk(
     async (comment, {dispatch})=>{
         const response = await fetch(baseUrl + 'comments',{
         method:'POST',
-        body:JSON.stringify(comment),
+        body:'JSON.stringify(comment)',
         headers: { 'Content-Type': 'application/json' }});
     
         if (!response.ok) {
@@ -61,7 +61,7 @@ const commentsSlice = createSlice({
         [fetchComments.fulfilled]: (state, action) => {
             state.isLoading = false;
             state.errMsg = '';
-            state.commentsArray = action.payload; 
+           
         },
         [postComment.rejected]: (state, action) => {
             state.isLoading = false;
