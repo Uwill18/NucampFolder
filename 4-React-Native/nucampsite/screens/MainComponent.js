@@ -34,7 +34,7 @@ const DirectoryNavigator = () => {
     screenOptions={screenOptions}>
 
     <Stack.Screen name='Directory' 
-                  component='DirectoryScreen'
+                  component={DirectoryScreen}
                   options={{title: 'Campsite Directory'}}/>
     <Stack.Screen name='CampsiteInfo'
                   component={CampsiteInfoScreen}
