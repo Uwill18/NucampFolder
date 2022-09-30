@@ -1,4 +1,4 @@
-import { FlatList,Text } from 'react-native';
+import { FlatList} from 'react-native';
 import { Avatar, ListItem } from 'react-native-elements';
 import { useState,React } from 'react';
 import { CAMPSITES } from '../shared/campsites';
