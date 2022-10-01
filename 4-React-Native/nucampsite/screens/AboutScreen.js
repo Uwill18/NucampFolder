@@ -1,5 +1,7 @@
-import {ScrollView,Card, Text } from 'react-native-elements';
+import {Card, ListItem, Avatar} from 'react-native-elements';
+import { ScrollView, Text } from 'react-native';
 import { PARTNERS } from '../shared/partners';
+import { useState } from 'react';
 
 
 const Mission =()=>{
@@ -19,20 +21,46 @@ const Mission =()=>{
 }
 
 const AboutScreen = () => {  
-    const [partner,setPartner]= useState(PARTNERS);
-
-  return (
-    <ScrollView>
-     <Mission/>
-     <Card>
-        <Card.Title>
-            Community Partners
-        </Card.Title>
-        <Card.Divider/>
-     </Card>
-    </ScrollView>
-  );
+    const [partners,setPartners]= useState(PARTNERS);
+    return (
+      <ScrollView>
+      <Mission/>
+      <Card>
+         <Card.Title>
+             Community Partners
+         </Card.Title>
+         <Card.Divider/>
+         {partners.map((partner)=>{ 
+       return (<ListItem key={partner.id}> 
+             <Avatar source={partner.image} rounded/> 
+             <ListItem.Content>
+                 <ListItem.Title>
+                     {partner.name}
+                 </ListItem.Title>
+                 <ListItem.Subtitle>
+                     {partner.description}
+                 </ListItem.Subtitle>
+             </ListItem.Content>
+             </ListItem>)
+             
+     })}
+      </Card>
+      </ScrollView>
+    )
 }
+
+    
+
+  
+    
+
+
+    
+     
+
+
+    
+
 
 
 
