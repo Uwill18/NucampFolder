@@ -1,18 +1,32 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { campsitesReducer } from '../features/campsites/campsitesSlice';
-import { commentsReducer } from '../features/comments/commentsSlice';
-import { partnersReducer } from '../features/partners/partnersSlice';
-import { promotionsReducer } from '../features/promotions/promotionsSlice';
-import { favoritesReducer } from '../features/favorites/favoritesSlice';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { baseUrl } from '../../shared/baseUrl';
 
+export const fetchPromotions = createAsyncThunk(
+    'promotions/fetchPromotions',
+    async () => {
+        const response = await fetch(baseUrl + 'promotions');
+        return response.json();
+    }
+);
 
-
-export const store = configureStore({
-    reducer: {
-        campsites: campsitesReducer,
-        comments: commentsReducer,
-        partners: partnersReducer,
-        promotions: promotionsReducer,
-        favorites: favoritesReducer
+const promotionsSlice = createSlice({
+    name: 'promotions',
+    initialState: { isLoading: true, errMess: null, promotionsArray: [] },
+    reducers: {},
+    extraReducers: {
+        [fetchPromotions.pending]: (state) => {
+            state.isLoading = true;
+        },
+        [fetchPromotions.fulfilled]: (state, action) => {
+            state.isLoading = false;
+            state.errMess = null;
+            state.promotionsArray = action.payload;
+        },
+        [fetchPromotions.rejected]: (state, action) => {
+            state.isLoading = false;
+            state.errMess = action.error ? action.error.message : 'Fetch failed';
+        }
     }
 });
+
+export const promotionsReducer = promotionsSlice.reducer;
